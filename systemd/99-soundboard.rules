@@ -1,0 +1,11 @@
+# duckyPad detection (VID:0483 PID:D11C)
+# Start soundboard socket when device is connected
+ACTION=="add", SUBSYSTEM=="input", \
+  ATTRS{idVendor}=="0483", ATTRS{idProduct}=="d11c", \
+  TAG+="systemd", \
+  ENV{SYSTEMD_USER_WANTS}+="soundboard.socket"
+
+# Kill soundboard when device is removed
+ACTION=="remove", SUBSYSTEM=="input", \
+  ATTRS{idVendor}=="0483", ATTRS{idProduct}=="d11c", \
+  RUN+="/usr/bin/pkill -x soundboard"

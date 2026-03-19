@@ -1,0 +1,20 @@
+[package]
+name = "soundboard"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+zlink = { version = "0.4", features = ["server", "service", "proxy"] }
+rodio = { version = "0.19", default-features = false, features = ["symphonia-all"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "net"] }
+serde = { version = "1", features = ["derive"] }
+dirs = "5"
+wherror = "2"
+error-stack = "0.4"
+sd-notify = "0.4"
+toml = "0.8"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+futures-util = "0.3"
+users = "0.11"

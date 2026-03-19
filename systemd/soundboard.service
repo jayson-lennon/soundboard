@@ -1,0 +1,12 @@
+[Unit]
+Description=Soundboard audio playback server
+After=graphical-session.target
+Requires=graphical-session.target
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/soundboard server
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

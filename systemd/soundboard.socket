@@ -1,0 +1,9 @@
+[Unit]
+Description=Soundboard varlink socket
+
+[Socket]
+ListenStream=%t/soundboard.varlink
+Accept=no
+
+[Install]
+WantedBy=sockets.target
